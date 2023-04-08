@@ -1,0 +1,10 @@
+<ul>
+    {% for level in name_menu %}
+        <li>
+            <a href="?{{ otherquery }}&{{ menu }}={{ level.id }}" > {{ level.name }} </a>
+        </li>
+        {% if level.child_levels %}
+            {% include 'menu/dop.html' with name_menu=level.child_levels %}
+        {% endif %}
+    {% endfor %}
+</ul>
